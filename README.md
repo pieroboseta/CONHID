@@ -57,8 +57,8 @@ Conhid is a **powerful, simple, and modern** bulk file renaming tool. It allows 
 
 ## ⚡ Preview
 
-> _Screenshot of the application interface [Imgur](https://imgur.com/bflggqp)_
-![Conhid Screenshot](https://i.imgur.com/yourimage.png)
+![Screenshot (106)](https://github.com/user-attachments/assets/286c8ddd-1f09-4f4e-ba96-bbc9f9f756d8)
+
 
 ---
 
