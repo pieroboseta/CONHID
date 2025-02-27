@@ -1,21 +1,23 @@
 # 🌟 CONHID - Bulk File Renamer
 
-Conhid is a **powerful, simple, and modern** bulk file renaming tool. It allows users to quickly rename files, restore their original names, search for files, and sort them based on type. Designed with **usability and aesthetics** in mind, Conhid ensures a smooth experience with a clean UI and efficient performance.
+Conhid is a **powerful, simple, and modern** bulk file renaming tool that now offers enhanced customization features. Easily rename files using a default sequence with a custom prefix and extension, or load a custom list of names from a JSON file. Conhid simplifies file organization with an intuitive interface and robust functionality.
 
 ---
 
 ## ✨ Features
 
-| Feature                  | Description |
-|--------------------------|-------------|
-| 📂 **Select Folder**     | Choose a folder containing the files you want to rename. |
-| 🔄 **Rename Files**      | Renames files in the selected folder using a structured format (e.g., `document-01.bin`). |
-| 🔙 **Restore Names**     | Restores files back to their original names using saved rename history. |
-| 📋 **Full List View**    | Displays all renamed files with their original names. |
-| 🔍 **Search**            | Search through both renamed and restored file names. |
-| 📖 **Logging System**    | Keeps a history of renamed/restored files in `conhid.json`. |
-| 🎨 **Modern UI**         | Aesthetic, resizable window, and easy to use. |
-| 🚀 **Optimized for Windows** | Runs smoothly on every windows device. |
+| Feature                      | Description |
+|------------------------------|-------------|
+| 📂 **Select Folder**         | Choose a folder containing the files you want to rename. |
+| 📝 **Set Prefix**            | Define a custom prefix and file extension for your file names. |
+| 🗒 **Add List**              | Load a JSON file with a list of custom file names to be used for renaming. |
+| 🔄 **Rename Files**          | Renames files using the custom list if available, or defaults to a sequential format (e.g., `document-1.bin`). |
+| 🔙 **Restore Names**         | Revert files to their original names using saved rename history. |
+| 📋 **Full List View**        | Displays a table of original and new file names for review. |
+| 🔍 **Search**                | Search through both renamed and restored file names using keywords. |
+| 📖 **Logging System**        | Tracks all renaming operations in `conhid.json` for auditability and easy restoration. |
+| 🎨 **Modern UI**             | Features a sleek, dark-themed interface for an enhanced user experience. |
+| 🚀 **Optimized for Windows** | Ensures smooth performance on Windows devices. |
 
 ---
 
@@ -46,26 +48,26 @@ Conhid is a **powerful, simple, and modern** bulk file renaming tool. It allows 
 ## 🚀 Usage Guide
 
 1. **Open Conhid** by running the Python script.
-2. Click **"Select"** to choose the folder with files to rename.
-3. Use **"Rename"** to rename files in bulk.
-4. If needed, click **"Restore"** to revert them to their original names.
-5. Click **"Full List"** to view all renamed files.
-6. Use the **Search Bar** and **"Search"** button to find files.
-7. Close the program when done. Your rename history is saved in `conhid.json`.
+2. Click **"Select"** to choose the folder with files you want to rename.
+3. Click **"Set Prefix"** to define your custom file name prefix and extension.
+4. (Optional) Click **"Add List"** to load a JSON file containing custom file names.
+5. Click **"Rename"** to rename the files using the custom list if available, or the default sequential format.
+6. Click **"Restore"** to revert the files to their original names if necessary.
+7. Use **"Full List"** to view all renaming operations and **"Search"** to locate specific files.
 
 ---
 
 ## ⚡ Preview
 
-![Screenshot (106)](https://github.com/user-attachments/assets/286c8ddd-1f09-4f4e-ba96-bbc9f9f756d8)
+![Screenshot](https://github.com/user-attachments/assets/921d32e6-9a1f-4348-98aa-2249c30d2c39)
 
 
 ---
 
 ## 📝 Notes
-- **Renaming Format:** Files are renamed as `document-01.bin`, `document-02.bin`, etc.
-- **Custom Prefix:** (Coming Soon) Users will be able to set custom prefixes.
-- **Undo Last Action:** (Coming Soon) Quick revert of the last rename action.
+- **Renaming Format:** Files are renamed using a custom list (if loaded via **Add List**) or a default format `<prefix>-<number>.<extension>` (e.g., `document-1.bin`).
+- **Custom Naming Options:** Easily personalize your file names by setting a custom prefix and file extension.
+- **Future Updates:** Features like "Undo Last Action" are coming soon.
 
 ---
 
