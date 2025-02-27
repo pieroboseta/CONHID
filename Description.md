@@ -1,11 +1,13 @@
 # CONHID: Bulk File Renamer
 
 ## Overview
-**CONHID** is a powerful, user-friendly bulk file renaming tool designed to simplify the process of organizing large collections of files. With its modern, sleek interface and robust feature set, CONHID allows you to rename files in bulk, restore original names, search through file histories, and even sort files by type. Whether you're managing media libraries, organizing documents, or performing routine file maintenance, CONHID is your go-to solution.
+**CONHID** is an advanced and user-friendly bulk file renaming tool designed to simplify and customize the process of organizing large collections of files. With a modern, sleek interface and enhanced features, CONHID now offers the flexibility to set custom naming formats and load a list of custom names, in addition to its core functionalities like bulk renaming and restoration. Whether you're managing media libraries, organizing documents, or performing routine file maintenance, CONHID adapts to your workflow with ease.
 
 ## What It Does
 CONHID is built with several key functionalities:
-- **Bulk Renaming:** Automatically renames all files in a selected folder using a consistent format (e.g., `document-1.bin`, `document-2.bin`, etc.).
+- **Bulk Renaming:** Automatically renames all files in a selected folder using either a custom list of names (loaded from a JSON file) or a default sequential format (e.g., `document-1.bin`, `document-2.bin`, etc.) with a user-defined prefix and extension.
+- **Custom Naming Options:** Set your own file name prefix and file extension through the new **Prefix** feature.
+- **Load Custom Name List:** Optionally load a JSON file containing a list of custom file names to be used for renaming, providing greater control over the process.
 - **Restoration:** Easily restore files to their original names using a saved rename history.
 - **Search Functionality:** Quickly search through both renamed and restored files using keywords.
 - **Logging System:** Every renaming operation is logged in a JSON file (`conhid.json`), ensuring that changes are tracked and can be reverted if necessary.
@@ -14,41 +16,29 @@ CONHID is built with several key functionalities:
 ## How It Works
 1. **Select a Folder:**
    - Click the **Select** button to open a dialog and choose the folder containing the files you want to manage.
-   - Once a folder is selected, CONHID loads all files from that directory.
-
-2. **Rename Files:**
-   - Click the **Rename** button to bulk rename all files in the selected folder.
-   - Files are renamed following a standard format (e.g., `document-1.bin`, `document-2.bin`, etc.).
-   - The original file names are stored in `conhid.json` for later restoration.
-
-3. **Restore Files:**
-   - If you need to revert the changes, click the **Restore** button.
-   - CONHID reads the rename history from `conhid.json` and renames the files back to their original names.
-   - The history for that folder is then cleared from the log.
-
-4. **Full List View:**
-   - Click the **Full List** button to open a new window that displays all files from the selected folder.
-   
-5. **Search:**
-   - Enter a search term in the search bar and click the **Search** button.
-   - CONHID will filter and display files whose original or new names match the search query.
+2. **Set Custom Prefix & Extension:**
+   - Click the **Prefix** button to set your desired file name prefix and file extension.
+3. **Load Custom Name List (Optional):**
+   - Click the **Add List** button to load a JSON file containing custom file names. If loaded, CONHID uses these names for renaming; otherwise, it falls back to the default naming format.
+4. **Rename Files:**
+   - Click the **Rename** button to bulk rename files using either the loaded list or the specified prefix with sequential numbering.
+5. **Restore Files:**
+   - If you need to revert the changes, click the **Restore** button. CONHID reads the rename history from `conhid.json` and renames the files back to their original names.
+6. **View & Search:**
+   - Click **Full List** to view all file renaming operations.
+   - Use the **Search** function to quickly locate files by name.
 
 ## Features & Benefits
-| Feature               | Description                                                                                      | Use Cases                                                 |
-|-----------------------|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| **Bulk Renaming**     | Renames files with a consistent, easy-to-read naming convention.                                 | Organizing media libraries or document archives.          |
-| **Restore Function**  | Reverts files to their original names using saved history.                                       | Undo accidental renames or revert changes quickly.        |
-| **Full List View**    | Displays a sortable table of files, showing both original and new names.                         | Quickly reviewing all file changes in one place.          |
-| **Search Functionality** | Filters files based on keywords present in either original or renamed file names.            | Locating specific files within large directories.         |
-| **Logging System**    | Maintains a detailed history of all renaming operations in a JSON file (`conhid.json`).             | Auditing changes and ensuring reversibility of actions.   |
-| **Modern UI**         | Features a dark-themed interface with uniform buttons for a sleek user experience.       | Enhances user experience and reduces visual clutter.      |
-
-## How It Can Be Useful
-- **Media Organization:** Manage large collections of movies, TV shows, or music files by renaming them into a standard format, making it easier to sort and locate files.
-- **Document Management:** Organize documents, reports, and scanned files with consistent naming conventions, especially useful in business or academic settings.
-- **Bulk File Maintenance:** Automate repetitive file renaming tasks for IT professionals, archivists, and digital asset managers.
-- **Error Correction:** Quickly revert unintended file renames, ensuring that original data is not permanently lost.
-- **Custom Workflows:** Easily integrate with other tools or scripts that require standardized file names for further processing.
+| Feature                   | Description                                                                                                      | Use Cases                                                 |
+|---------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| **Bulk Renaming**         | Renames files with a customizable naming format using either a list of names or a default sequential pattern.      | Organizing media libraries or document archives.          |
+| **Custom Naming Options** | Set a custom prefix and file extension to match your naming conventions.                                          | Personalizing file names to suit specific projects.       |
+| **Load Custom Name List** | Import a JSON file containing custom file names to apply specific naming orders.                                  | Tailoring file names for detailed organizational needs.   |
+| **Restore Function**      | Reverts files to their original names using saved history.                                                       | Undo accidental renames quickly and efficiently.          |
+| **Full List View**        | Displays a sortable table of files, showing both original and new names.                                          | Reviewing all file changes in one place.                  |
+| **Search Functionality**  | Filters files based on keywords in original or renamed file names.                                                | Quickly locating specific files among many.               |
+| **Logging System**        | Tracks every renaming operation in a JSON log (`conhid.json`) for auditability and reversibility.                   | Ensuring data integrity and change traceability.          |
+| **Modern UI**             | Features a dark-themed, intuitive interface that enhances usability and reduces visual clutter.                     | Improving user experience across various workflows.       |
 
 ## Technical Details
 - **Language:** Python
@@ -74,13 +64,11 @@ CONHID is built with several key functionalities:
 
 3. **Follow the On-Screen Instructions:**
    - Click **Select** to choose a folder.
-   - Use **Rename** to bulk rename files.
-   - Click **Restore** to revert to original names.
-   - View the **Full List** and use **Search** for filtering.
+   - Click **Prefix** to set your custom file name prefix and extension.
+   - (Optional) Click **Add List** to load a JSON file with custom names.
+   - Click **Rename** to apply the new file names.
+   - Click **Restore** to revert changes if needed.
+   - Use **Full List** and **Search** to review and locate files.
 
 ## Conclusion
-CONHID is designed to simplify the process of managing large numbers of files, making it an essential tool for anyone who frequently handles bulk file operations. With its modern UI, robust features, and user-friendly design, CONHID streamlines file organization and improves productivity.
-
----
-
-Feel free to update or expand on this document as needed. Enjoy using CONHID! 🚀
+CONHID streamlines bulk file management with added customization options, making it an essential tool for anyone who frequently handles file renaming tasks. Enjoy a more personalized and flexible approach to organizing your files with CONHID! 🚀
